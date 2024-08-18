@@ -15,6 +15,13 @@ public class MainController {
         return "index";
     }
 
+    @GetMapping("/signup")
+    public String signup(Model model){
+        model.addAttribute("user", null);
+
+        return "register";
+    }
+
     @GetMapping("/login")
     public String login() {
         return "login";
