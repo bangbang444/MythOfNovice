@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf 할 때 필요 -->
 <html lang="en">
 
 <head>
@@ -36,55 +37,64 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" action="/signup" method="POST">
+                            <form class="user" th:action th:object="${user}" action="/signup" method="POST">
                                 <!-- user ID -->
                                 <div class="form-group">
-                                    <label for="exampleInputID">ID</label>
+                                    <label for="userLoginId" th:text="#{label.user.id}">ID</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="userLoginId" id="exampleInputID"
-                                           placeholder="ID">
+                                    <input type="text" id="userLoginId" th:field="*{userLoginId}"
+                                           th:errorclass="field-error" class="form-control form-control-user" placeholder="ID">
+                                        <div class="field-error" th:errors="*{userLoginId}">
+                                            ID 형식 오류
+                                        </div>
                                 </div>
 
                                 <!-- User Password -->
                                 <div class="form-group">
-                                    <label for="exampleInputPassword">Password</label>
+                                    <label for="userPassword" th:text="#{label.user.password}">Password</label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" name="userPassword" placeholder="Password">
+                                        <input type="password" id="userPassword" th:field="*{userPassword}"
+                                               th:errorclass="field-error" class="form-control form-control-user" placeholder="Password">
                                     </div>
+
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleRepeatPassword" name="userPasswordCheck" placeholder="Repeat Password">
+                                        <input type="password" id="userRepeatPassword" th:field="*{userRepeatPassword}"
+                                               class="form-control form-control-user" placeholder="Repeat Password">
                                     </div>
+
+                                    <div class="field-error" th:errors="*{userPassword}">
+                                        password 형식 오류
+                                    </div>
+
                                 </div>
 
                                 <!-- email -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail">Email</label>
+                                    <label for="userEmail" th:text="#{label.user.email}">Email</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" name="userEmail" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                    <input type="email" id="userEmail" th:field="*{userEmail}"
+                                           class="form-control form-control-user" placeholder="Email Address">
                                 </div>
 
                                 <!-- nickname -->
                                 <div class="form-group">
-                                    <label for="exampleInputNickname">Nickname</label>
+                                    <label for="userNickname" th:text="#{label.user.nickname}">Nickname</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="userNickname" id="exampleInputNickname"
-                                           placeholder="Nickname">
+                                    <input type="text" id="userNickname" th:field="*{userNickname}"
+                                           class="form-control form-control-user" placeholder="Nickname">
                                 </div>
 
                                 <!-- gender -->
                                 <div class="form-group">
-                                    <label for="exampleInputGender">Gender</label>
+                                    <label for="userGender" th:text="#{label.user.gender}">Gender</label>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control form-control-user" name="userGender" id="exampleInputGender">
+                                    <select class="form-control form-control-user" id="userGender" th:field="*{userGender}">
                                         <option value="" disabled selected>Select your gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
@@ -93,16 +103,16 @@
 
                                 <!-- job -->
                                 <div class="form-group">
-                                    <label for="exampleInputJob">Job</label>
+                                    <label for="userJob" th:text="#{label.user.job}">Job</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="userJob" id="exampleInputJob"
-                                           placeholder="Your Job">
+                                    <input type="text" id="userJob" th:field="*{userJob}"
+                                           class="form-control form-control-user" placeholder="Your Job">
                                 </div>
 
                                 <!-- Birthday -->
                                 <div class="form-group">
-                                    <label for="exampleInputYear">Birthday</label>
+                                    <label for="exampleInputYear" th:text="#{label.user.birthday}">Birthday</label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
