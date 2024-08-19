@@ -3,7 +3,7 @@ package novice.present.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import novice.present.domain.User;
-import novice.present.domain.UserRepository;
+import novice.present.repository.UserRepository;
 import novice.present.validation.UserValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +26,6 @@ public class MainController {
 
     @InitBinder
     public void init(WebDataBinder dataBinder) {
-        log.info("init binder {}", dataBinder);
         dataBinder.addValidators(userValidator);
     }
 

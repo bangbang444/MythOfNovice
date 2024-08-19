@@ -1,5 +1,6 @@
-package novice.present.domain;
+package novice.present.repository;
 
+import novice.present.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
