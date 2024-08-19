@@ -36,13 +36,13 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" action="/signup" method="POST">
                                 <!-- user ID -->
                                 <div class="form-group">
                                     <label for="exampleInputID">ID</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputID"
+                                    <input type="text" class="form-control form-control-user" name="userLoginId" id="exampleInputID"
                                            placeholder="ID">
                                 </div>
 
@@ -53,11 +53,11 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Password">
+                                               id="exampleInputPassword" name="userPassword" placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                               id="exampleRepeatPassword" placeholder="Repeat Password">
+                                               id="exampleRepeatPassword" name="userPasswordCheck" placeholder="Repeat Password">
                                     </div>
                                 </div>
 
@@ -66,7 +66,7 @@
                                     <label for="exampleInputEmail">Email</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    <input type="email" class="form-control form-control-user" name="userEmail" id="exampleInputEmail"
                                         placeholder="Email Address">
                                 </div>
 
@@ -75,7 +75,7 @@
                                     <label for="exampleInputNickname">Nickname</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputNickname"
+                                    <input type="text" class="form-control form-control-user" name="userNickname" id="exampleInputNickname"
                                            placeholder="Nickname">
                                 </div>
 
@@ -84,7 +84,7 @@
                                     <label for="exampleInputGender">Gender</label>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control form-control-user" id="exampleInputGender">
+                                    <select class="form-control form-control-user" name="userGender" id="exampleInputGender">
                                         <option value="" disabled selected>Select your gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
@@ -96,7 +96,7 @@
                                     <label for="exampleInputJob">Job</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputJob"
+                                    <input type="text" class="form-control form-control-user" name="userJob" id="exampleInputJob"
                                            placeholder="Your Job">
                                 </div>
 
@@ -107,20 +107,22 @@
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="number" class="form-control form-control-user"
-                                               id="exampleInputYear" placeholder="Year">
+                                               id="exampleInputYear" name="year" placeholder="Year">
                                     </div>
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="number" class="form-control form-control-user"
-                                               id="exampleInputMonth" placeholder="Month">
+                                               id="exampleInputMonth" name="month" placeholder="Month">
                                     </div>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-user"
-                                               id="exampleInputDay" placeholder="Day">
+                                               id="exampleInputDay" name="day" placeholder="Day">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Register Account
-                                </a>
+                                <div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        Register Account
+                                    </button>
+                                </div>
                             </form>
                             <hr>
                             <div class="text-center">

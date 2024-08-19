@@ -16,6 +16,7 @@ public class User {
      */
     private String userLoginId;
     private String userPassword;
+    private String userPasswordCheck;
 
     /**
      * [기타 정보]
@@ -23,11 +24,27 @@ public class User {
      * userJob:
      * userEmail: 이메일 형식
      * userGender: DB 저장 형식 - M or F
-     * uesrBirth:
+     * userBirth:
+     * year :
+     * month :
+     * day :
      */
     private String userNickname;
     private String userJob;
     private String userEmail;
     private String userGender;
     private LocalDate userBirth;
+    private int year;
+    private int month;
+    private int day;
+
+    public User(String userLoginId, String userPassword, String userNickname, String userJob, String userEmail, String userGender, int year, int month, int day) {
+        this.userLoginId = userLoginId;
+        this.userPassword = userPassword;
+        this.userNickname = userNickname;
+        this.userJob = userJob;
+        this.userEmail = userEmail;
+        this.userGender = userGender;
+        this.userBirth = LocalDate.of(year, month, day);
+    }
 }
