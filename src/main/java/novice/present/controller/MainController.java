@@ -7,7 +7,10 @@ import novice.present.domain.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.ModelAttribute;
+=======
+>>>>>>> 8c94e9060a0fdde215f84d2da7bafead72ffe044
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -39,8 +42,9 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
+    //메인 화면에서 선물정보가 넘어올때 사용하는 매핑
+    @PostMapping("present")
+    public String present() {
+        return "redirect:/index";
     }
 }
