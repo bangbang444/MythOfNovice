@@ -9,7 +9,7 @@ import lombok.Data;
 */
 
 @Data
-public class itemInfo {
+public class ItemInfo {
     //*임시* 성별은 2개밖에 없으므로 추후에 html에서 radio나 콤보박스같은 형식으로 받을 예정
     private String gender;
     private int age;

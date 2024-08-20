@@ -113,19 +113,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <!-- Topbar Search 삭제 -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -311,13 +299,30 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">선물 고르기</h1>
-                    </div>
+                    <header class="bg-gradient-primary py-5">
+                        <div class="container px-5">
+                            <div class="row gx-5 align-items-center justify-content-center">
+                                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                                    <div class="my-5 text-center text-xl-start">
+                                        <h1 class="display-5 fw-bolder text-white mb-2">누구에게 선물을 해야할지 <br> 모르겠다구요?</h1>
+                                        <p class="lead fw-normal text-white-50 mb-4">저희 서비스를 이용하시면 고민없이 선물을 고를수 있습니다!!!</p>
+                                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                            <a class="btn btn-primary btn-lg px-4 me-sm-3" th:href="@{/signup}">이용해보기</a>
+                                            <a class="btn btn-outline-light btn-lg px-4" th:href="@{/signup}">로그인하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="/img/gift.png" alt="..."></div>
+                            </div>
+                        </div>
+                    </header>
+
 
                     <!-- Content Row -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800"></h1>
+                    </div>
 
                     <!-- Content Row -->
 
