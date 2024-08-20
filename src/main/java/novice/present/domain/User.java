@@ -16,7 +16,7 @@ public class User {
      */
     private String userLoginId;
     private String userPassword;
-    private String userPasswordCheck;
+    private String userRepeatPassword;
 
     /**
      * [기타 정보]
@@ -37,6 +37,9 @@ public class User {
     private int year;
     private int month;
     private int day;
+
+    public User(){
+    }
 
     public User(String userLoginId, String userPassword, String userNickname, String userJob, String userEmail, String userGender, int year, int month, int day) {
         this.userLoginId = userLoginId;

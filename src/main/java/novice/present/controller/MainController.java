@@ -3,15 +3,18 @@ package novice.present.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import novice.present.domain.User;
-import novice.present.domain.UserRepository;
+import novice.present.repository.UserRepository;
+import novice.present.validation.UserValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-=======
->>>>>>> 8c94e9060a0fdde215f84d2da7bafead72ffe044
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @Slf4j
@@ -19,6 +22,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
     private final UserRepository userRepository;
+    private final UserValidator userValidator;
+
+    @InitBinder
+    public void init(WebDataBinder dataBinder) {
+        dataBinder.addValidators(userValidator);
+    }
 
     @GetMapping
     public String home(Model model) {
@@ -27,14 +36,17 @@ public class MainController {
     }
 
     @GetMapping("/signup")
-    public String signup(){
+    public String signup(Model model){
+        model.addAttribute("user", new User());
         return "register";
     }
 
     @PostMapping("/signup")
-    public String signup(@ModelAttribute User user, Model model){
-        log.info("hi3");
-        model.addAttribute("user", null);
+    public String signup(@Validated @ModelAttribute User user, BindingResult bindingResult , RedirectAttributes redirectAttributes){
+
+        if(bindingResult.hasErrors()){
+            return "register";
+        }
 
         userRepository.save(user);
         log.info(user.toString());
