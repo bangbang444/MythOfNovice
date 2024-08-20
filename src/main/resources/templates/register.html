@@ -40,7 +40,7 @@
                             <form class="user" th:action th:object="${user}" action="/signup" method="POST">
                                 <!-- user ID -->
                                 <div class="form-group">
-                                    <label for="userLoginId" th:text="#{label.user.id}">ID</label>
+                                    <label for="userLoginId" th:text="#{label.user.id}" style="position: relative; top: 15px; left: 3px;">ID</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userLoginId" th:field="*{userLoginId}"
@@ -52,7 +52,7 @@
 
                                 <!-- User Password -->
                                 <div class="form-group">
-                                    <label for="userPassword" th:text="#{label.user.password}">Password</label>
+                                    <label for="userPassword" th:text="#{label.user.password}" style="position: relative; top: 15px; left: 3px;">Password</label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -73,7 +73,7 @@
 
                                 <!-- email -->
                                 <div class="form-group">
-                                    <label for="userEmail" th:text="#{label.user.email}">Email</label>
+                                    <label for="userEmail" th:text="#{label.user.email}" style="position: relative; top: 15px; left: 3px;">Email</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" id="userEmail" th:field="*{userEmail}"
@@ -82,7 +82,7 @@
 
                                 <!-- nickname -->
                                 <div class="form-group">
-                                    <label for="userNickname" th:text="#{label.user.nickname}">Nickname</label>
+                                    <label for="userNickname" th:text="#{label.user.nickname}" style="position: relative; top: 15px; left: 3px;">Nickname</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userNickname" th:field="*{userNickname}"
@@ -91,7 +91,7 @@
 
                                 <!-- gender -->
                                 <div class="form-group">
-                                    <label for="userGender" th:text="#{label.user.gender}">Gender</label>
+                                    <label for="userGender" th:text="#{label.user.gender}" style="position: relative; top: 15px; left: 3px;">Gender</label>
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control form-control-user" id="userGender" th:field="*{userGender}">
@@ -103,7 +103,7 @@
 
                                 <!-- job -->
                                 <div class="form-group">
-                                    <label for="userJob" th:text="#{label.user.job}">Job</label>
+                                    <label for="userJob" th:text="#{label.user.job}" style="position: relative; top: 15px; left: 3px;">Job</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userJob" th:field="*{userJob}"
@@ -112,7 +112,7 @@
 
                                 <!-- Birthday -->
                                 <div class="form-group">
-                                    <label for="exampleInputYear" th:text="#{label.user.birthday}">Birthday</label>
+                                    <label for="exampleInputYear" th:text="#{label.user.birthday}" style="position: relative; top: 15px; left: 3px;">Birthday</label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
