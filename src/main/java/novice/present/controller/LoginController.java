@@ -32,11 +32,10 @@ public class LoginController {
     ) {
         log.info("로그인 요청");
 
-        // 복합 룰 검증
-        // TODO: 구현해야 됨.
-        User user = userService.login(form.getLoginId(), form.getPassword());
-        if (user == null) {
-            //bindingResult.reject();
+        User user = userService.login(form.getLoginId(), form.getPassword(), bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "login";
         }
 
         return "redirect:/";
