@@ -20,7 +20,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="css/sb-admin-2-custom.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
@@ -39,8 +39,8 @@
                             </div>
                             <form class="user" th:action th:object="${user}" action="/signup" method="POST">
                                 <!-- user ID -->
-                                <div class="form-group">
-                                    <label for="userLoginId" th:text="#{label.user.id}" style="position: relative; top: 15px; left: 3px;">ID</label>
+                                <div class="form-group-label">
+                                    <label for="userLoginId" th:text="#{label.user.id}">ID</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userLoginId" th:field="*{userLoginId}"
@@ -51,8 +51,8 @@
                                 </div>
 
                                 <!-- User Password -->
-                                <div class="form-group">
-                                    <label for="userPassword" th:text="#{label.user.password}" style="position: relative; top: 15px; left: 3px;">Password</label>
+                                <div class="form-group-label">
+                                    <label for="userPassword" th:text="#{label.user.password}" >Password</label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -72,8 +72,8 @@
                                 </div>
 
                                 <!-- email -->
-                                <div class="form-group">
-                                    <label for="userEmail" th:text="#{label.user.email}" style="position: relative; top: 15px; left: 3px;">Email</label>
+                                <div class="form-group-label">
+                                    <label for="userEmail" th:text="#{label.user.email}">Email</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" id="userEmail" th:field="*{userEmail}"
@@ -81,8 +81,8 @@
                                 </div>
 
                                 <!-- nickname -->
-                                <div class="form-group">
-                                    <label for="userNickname" th:text="#{label.user.nickname}" style="position: relative; top: 15px; left: 3px;">Nickname</label>
+                                <div class="form-group-label">
+                                    <label for="userNickname" th:text="#{label.user.nickname}">Nickname</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userNickname" th:field="*{userNickname}"
@@ -90,8 +90,8 @@
                                 </div>
 
                                 <!-- gender -->
-                                <div class="form-group">
-                                    <label th:text="#{label.user.gender}" style="position: relative; top: 15px; left: 3px;">Gender</label>
+                                <div class="form-group-label">
+                                    <label th:text="#{label.user.gender}">Gender</label>
                                 </div>
                                 <div class="form-group">
                                     <div class="btn-group btn-group-toggle w-100" data-toggle="buttons" style="border-radius: 50px; border: 1px solid #d1d3e2;">
@@ -104,28 +104,9 @@
                                     </div>
                                 </div>
 
-                                <style>
-                                    .btn-group-toggle .btn {
-                                        display: flex; /* Flexbox 사용 */
-                                        align-items: center; /* 수직 중앙 정렬 */
-                                        justify-content: center; /* 수평 중앙 정렬 */
-                                        height: 50px; /* 버튼 높이 설정 */
-                                        font-size: 1rem; /* 글자 크기 조정 */
-                                        background-color: white; /* 기본 배경색 흰색 */
-                                        color: gray; /* 기본 글자색 회색 */
-                                        border-color: #d1d3e2; /* 테두리 색상 */
-                                    }
-
-                                    .btn-group-toggle .btn.active {
-                                        background-color: #4e73df !important; /* 클릭했을 때의 파란색 */
-                                        color: white !important; /* 글자색 흰색 */
-                                        border-color: #4e73df !important; /* 테두리 색상도 동일하게 설정 */
-                                    }
-                                </style>
-
                                 <!-- job -->
-                                <div class="form-group">
-                                    <label for="userJob" th:text="#{label.user.job}" style="position: relative; top: 15px; left: 3px;">Job</label>
+                                <div class="form-group-label">
+                                    <label for="userJob" th:text="#{label.user.job}">Job</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userJob" th:field="*{userJob}"
@@ -133,8 +114,8 @@
                                 </div>
 
                                 <!-- Birthday -->
-                                <div class="form-group">
-                                    <label for="exampleInputYear" th:text="#{label.user.birthday}" style="position: relative; top: 15px; left: 3px;">Birthday</label>
+                                <div class="form-group-label">
+                                    <label for="exampleInputYear" th:text="#{label.user.birthday}">Birthday</label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
