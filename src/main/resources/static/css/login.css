@@ -1,0 +1,16 @@
+.bg-login-image {
+    position: relative;
+    padding-left: 30px; /* 좌측 패딩 30px */
+    box-sizing: border-box;
+}
+
+.bg-login-image img {
+    position: absolute;
+    top: 50%;
+    left: 30px; /* 패딩을 제외하고 시작 위치를 30px로 설정 */
+    transform: translateY(-50%); /* 상하 중앙 정렬 */
+    width: calc(100% - 30px); /* 패딩을 제외한 나머지 공간을 차지 */
+    max-height: 100%;
+    height: auto;
+    display: block;
+}
