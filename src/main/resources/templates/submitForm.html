@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
-
+<!--d-->
 <head>
 
     <meta charset="utf-8">
@@ -24,182 +25,174 @@
 </head>
 
 <body id="page-top">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        <!-- start of Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- start of Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
+        <!-- Main Content -->
+        <div id="content">
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
 
-                    <!-- Topbar Search 삭제 -->
+                <!-- Topbar Search 삭제 -->
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                 aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                               placeholder="Search for..." aria-label="Search"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                             aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                           placeholder="Search for..." aria-label="Search"
+                                           aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
                                     </div>
-                                </form>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                     src="/img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <!-- Page Heading -->
-
-
-                    <!-- 글자와 제출폼 관련 row -->
-                    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <div class="container py-5">
-                            <div class="row g-5">
-                                <div class="col-md-12">
-                                    <div class="section-title position-relative pb-3 mb-5">
-                                        <h1 class="mb-0">당신의 소중한 사람에게 보낼 선물의 정보를 입력해주세요</h1>
-                                    </div>
-
-                                    <p class="mb-4">해당 사이트는 Chat-GPT기반으로 여러분이 입력한 정보를 이용하여 최적의 결론을 이끌어냅니다!!! 블라블라</p>
-
                                 </div>
-                            </div>
-                            <div class="row g-5">
-                                <div class="col-md-12">
-                                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">
-                                        <form>
-                                            <div class="row g-3">
-                                                <div class="col-12">
-                                                    <select class="form-control bg-light border-0" style="height: 55px;" required>
-                                                        <option selected="">성별을 골라주세요</option>
-                                                        <option value="1">남성</option>
-                                                        <option value="2">여성</option>
-                                                    </select>
-                                                    <br>
-                                                </div>
-                                                <div class="col-12">
-                                                    <input type="text" class="form-control bg-light border-0" placeholder="나이" style="height: 55px;" required>
-                                                    <br>
-                                                </div>
-                                                <div class="col-12">
-                                                    <input type="text" class="form-control bg-light border-0" placeholder="관계" style="height: 55px;" required>
-                                                    <br>
-                                                </div>
-                                                <div class="col-12">
-                                                    <input type="text" class="form-control bg-light border-0" placeholder="금액대" style="height: 55px;" required>
-                                                    <br>
-                                                </div>
-                                                <div class="col-12">
-                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="상황"></textarea>
-                                                    <br>
-                                                </div>
-                                                <div class="col-12">
-                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="카테고리"></textarea>
-                                                    <br>
-                                                </div>
-                                                <div class="col-12">
-                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="옵션"></textarea>
-                                                    <br>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="col-12">
-                                                        <button class="btn btn-dark w-100 py-3" type="button" onclick="location.href='/'">취소</button>
-                                                    </div>
-                                                    <br>
-                                                    <div class="col-12">
-                                                        <button class="btn btn-dark w-100 py-3" type="submit">제출</button>
-                                                    </div>
-                                                </div>
+                            </form>
+                        </div>
+                    </li>
 
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <img class="img-profile rounded-circle"
+                                 src="/img/undraw_profile.svg">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Activity Log
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
+
+
+                <!-- 글자와 제출폼 관련 row -->
+                <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="container py-5">
+                        <div class="row g-5">
+                            <div class="col-lg-7">
+                                <div class="section-title position-relative pb-3 mb-5">
+                                    <h1 class="mb-0">당신의 소중한 사람에게 보낼 선물의 정보를 입력해주세요</h1>
+                                </div>
+
+                                <p class="mb-4">해당 사이트는 Chat-GPT기반으로 여러분이 입력한 정보를 이용하여 최적의 결론을 이끌어냅니다!!! 블라블라</p>
+
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <select class="form-control bg-light border-0" style="height: 55px;">
+                                                    <option selected="">성별을 골라주세요</option>
+                                                    <option value="1">남성</option>
+                                                    <option value="2">여성</option>
+                                                </select>
+                                                <br>
                                             </div>
-                                        </form>
-                                    </div>
+
+                                            <div class="col-12">
+                                                <input type="text" class="form-control bg-light border-0" placeholder="나이" style="height: 55px;">
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control bg-light border-0" placeholder="관계" style="height: 55px;">
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control bg-light border-0" placeholder="금액대" style="height: 55px;">
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control bg-light border-0" rows="3" placeholder="상황"></textarea>
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control bg-light border-0" rows="3" placeholder="카테고리"></textarea>
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control bg-light border-0" rows="3" placeholder="옵션"></textarea>
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Content Row -->
-
                 </div>
-                <!-- /.container-fluid -->
+
+                <!-- Content Row -->
 
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2021</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
 
     </div>
+    <!-- End of Content Wrapper -->
+
+</div>
 </body>
 </html>
 
