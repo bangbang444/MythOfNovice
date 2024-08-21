@@ -35,6 +35,8 @@ public class LoginController {
         User user = userService.login(form.getLoginId(), form.getPassword(), bindingResult);
 
         if (bindingResult.hasErrors()) {
+            log.info("로그인 field error: {}", bindingResult.getFieldErrors());
+            log.info("로그인 global error: {}", bindingResult.getGlobalErrors());
             return "login";
         }
 
