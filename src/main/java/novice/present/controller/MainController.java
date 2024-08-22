@@ -46,4 +46,9 @@ public class MainController {
         return "redirect:/index";
     }
 
+    @GetMapping("/fragment")
+    public String fragment(){
+        return "fragment";
+    }
+
 }
