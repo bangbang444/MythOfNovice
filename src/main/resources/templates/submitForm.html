@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
@@ -21,10 +22,9 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <!-- Page Heading -->
-
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
 
                     <!-- 글자와 제출폼 관련 row -->
                     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
@@ -35,7 +35,7 @@
                                         <h1 class="mb-0">당신의 소중한 사람에게 보낼 선물의 정보를 입력해주세요</h1>
                                     </div>
 
-                                    <p class="mb-4">해당 사이트는 Chat-GPT기반으로 여러분이 입력한 정보를 이용하여 최적의 결론을 이끌어냅니다!!! 블라블라</p>
+                                <p class="mb-4">해당 사이트는 Chat-GPT기반으로 여러분이 입력한 정보를 이용하여 최적의 결론을 이끌어냅니다!!! 블라블라</p>
 
                                 </div>
                                 <div class="col-lg-5">
@@ -79,20 +79,38 @@
                                                     <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control bg-light border-0" placeholder="관계" style="height: 55px;">
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control bg-light border-0" placeholder="금액대" style="height: 55px;">
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control bg-light border-0" rows="3" placeholder="상황"></textarea>
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control bg-light border-0" rows="3" placeholder="카테고리"></textarea>
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control bg-light border-0" rows="3" placeholder="옵션"></textarea>
+                                                <br>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Content Row -->
-
                 </div>
-                <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
+                <!-- Content Row -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white" th:insert="~{fragment::footer}">
@@ -101,9 +119,12 @@
             <!-- End of Footer -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
 
     </div>
+    <!-- End of Content Wrapper -->
+
+</div>
 </body>
 </html>
 
