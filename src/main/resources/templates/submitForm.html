@@ -9,6 +9,12 @@
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul th:replace="~{fragment::sidebar}">
+        </ul>
+        <!-- End of Sidebar -->
+
         <!-- start of Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -102,8 +108,13 @@
 
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
+
+    <!--start of javascript-->
+    <th:block th:replace="~{fragment::javascript}">
+    </th:block>
+    <!--end of javascript-->
+
 </body>
 </html>
 
