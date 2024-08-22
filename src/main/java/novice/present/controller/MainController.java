@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequiredArgsConstructor
 public class MainController {
 
-    private final UserRepository userRepository;
+
     private final UserValidator userValidator;
 
     @InitBinder
@@ -32,25 +32,6 @@ public class MainController {
     @GetMapping
     public String home(Model model) {
         model.addAttribute("user", null);
-        return "index";
-    }
-
-    @GetMapping("/signup")
-    public String signup(Model model){
-        model.addAttribute("user", new User());
-        return "register";
-    }
-
-    @PostMapping("/signup")
-    public String signup(@Validated @ModelAttribute User user, BindingResult bindingResult , RedirectAttributes redirectAttributes){
-
-        if(bindingResult.hasErrors()){
-            return "register";
-        }
-
-        userRepository.save(user);
-        log.info(user.toString());
-
         return "index";
     }
 

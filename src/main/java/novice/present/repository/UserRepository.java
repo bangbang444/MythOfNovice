@@ -9,23 +9,12 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentMap;
 
 @Repository
-public class UserRepository {
+public interface UserRepository {
+    public User save(User user);
 
-    private static final Map<Long, User> store = new HashMap<>();
+    public User findById(Long id);
 
-    private static long sequence = 0L;
+    public void clearStore();
 
-    public User save(User user){
-        user.setUserId(++sequence);
-        store.put(user.getUserId(), user);
-        return user;
-    }
-
-    public User findById(Long id){
-        return store.get(id);
-    }
-
-    public void clearStore() {
-        store.clear();
-    }
+    Optional<User> findByUserLoginIdAndUserPassword(String userLoginId, String userPassword);
 }
