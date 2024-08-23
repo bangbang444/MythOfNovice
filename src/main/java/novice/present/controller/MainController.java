@@ -35,20 +35,7 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/present")
-    public String present(Model model){
-        return "submitForm";
-    }
 
-    //메인 화면에서 선물정보가 넘어올때 사용하는 매핑
-    @PostMapping("/present")
-    public String present() {
-        return "redirect:/index";
-    }
 
-    @GetMapping("/fragment")
-    public String fragment(){
-        return "fragment";
-    }
 
 }

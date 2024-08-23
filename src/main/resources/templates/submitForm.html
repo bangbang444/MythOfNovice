@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <div th:replace="~{fragment::head}">
     </div>
@@ -47,39 +46,45 @@
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">
-                                        <form>
+                                        <form th:object="${itemInfo}" method="post">
                                             <div class="row g-3">
                                                 <div class="col-12">
-                                                    <select class="form-control bg-light border-0" style="height: 55px;">
-                                                        <option selected="">성별을 골라주세요</option>
-                                                        <option value="1">남성</option>
-                                                        <option value="2">여성</option>
+                                                    <select class="form-control bg-light border-0" style="height: 55px;" th:field="*{gender}" required>
+                                                        <option value="" selected="" th:text="#{submit.select.gender.comment}"></option>
+                                                        <option value="male" th:text="#{submit.select.gender.male}"></option>
+                                                        <option value="female" th:text="#{submit.select.gender.female}"></option>
                                                     </select>
                                                     <br>
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <input type="text" class="form-control bg-light border-0" placeholder="나이" style="height: 55px;">
+                                                    <input type="text" class="form-control bg-light border-0" placeholder="나이" required
+                                                           th:placeholder="#{submit.input.age}" style="height: 55px;" th:field="*{age}" th:value=null>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
-                                                    <input type="text" class="form-control bg-light border-0" placeholder="관계" style="height: 55px;">
+                                                    <input type="text" class="form-control bg-light border-0" placeholder="관계" required
+                                                           th:placeholder="#{submit.input.relationship}" style="height: 55px;" th:field="*{relationship}">
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
-                                                    <input type="text" class="form-control bg-light border-0" placeholder="금액대" style="height: 55px;">
+                                                    <input type="text" class="form-control bg-light border-0" placeholder="금액" required
+                                                           th:placeholder="#{submit.input.price}" style="height: 55px;" th:field="*{price}">
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
-                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="상황"></textarea>
+                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="상황"
+                                                              th:placeholder="#{submit.textarea.situation}" th:field="*{situation}"></textarea>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
-                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="카테고리"></textarea>
+                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="카테고리"
+                                                              th:placeholder="#{submit.textarea.category}" th:field="*{category}"></textarea>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
-                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="옵션"></textarea>
+                                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="옵션"
+                                                              th:placeholder="#{submit.textarea.option}" th:field="*{option}"></textarea>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
