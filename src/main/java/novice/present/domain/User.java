@@ -1,5 +1,8 @@
 package novice.present.domain;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -14,6 +17,7 @@ public class User {
      * userLoginId: 최대 10자, 중복 안됨.
      * userPassword: 숫자, 영어, 특수문자 필수 & 8자 이상 & Hash로 저장 및 비교
      */
+
     private String userLoginId;
     private String userPassword;
     private String userRepeatPassword;
@@ -29,11 +33,14 @@ public class User {
      * month :
      * day :
      */
+
     private String userNickname;
     private String userJob;
     private String userEmail;
     private String userGender;
     private LocalDate userBirth;
+
+
     private int year;
     private int month;
     private int day;
