@@ -16,18 +16,13 @@ public class UserService {
 
     private final UserRepositoryImpl userRepositoryImpl;
 
-    public User findByUserLoginId(String userLoginId) {
-        // TODO: 구현해야 됨
-        return null;
-    }
-
     public User login(String loginId, String password, BindingResult bindingResult) {
         Optional<User> userOptional = userRepositoryImpl.findByUserLoginIdAndUserPassword(loginId, password);
 
         if (userOptional.isPresent()) {
             return userOptional.get();
         } else {
-            //bindingResult.reject();
+            bindingResult.reject("loginUserNotExist", null, null);
             return null;
         }
     }
