@@ -21,14 +21,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequiredArgsConstructor
 public class MainController {
 
-
-    private final UserValidator userValidator;
-
-    @InitBinder
-    public void init(WebDataBinder dataBinder) {
-        dataBinder.addValidators(userValidator);
-    }
-
     @GetMapping
     public String home(Model model) {
         model.addAttribute("user", null);
