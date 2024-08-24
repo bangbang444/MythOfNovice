@@ -1,5 +1,7 @@
 package novice.present.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import novice.present.domain.User;
@@ -22,12 +24,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class MainController {
 
     @GetMapping
-    public String home(Model model) {
-        model.addAttribute("user", null);
+    public String home(Model model, HttpServletRequest request) {
+
+        HttpSession session = request.getSession(false);
+        User user = null;
+        log.info("메인 컨트롤러: {}", session);
+        if (session != null) {
+            user = (User) session.getAttribute(LoginController.LOGIN_MEMBER);
+            log.info("메인 컨트롤러 유저: {}", user);
+        }
+
+        model.addAttribute("user", user);
         return "index";
     }
-
-
-
 
 }

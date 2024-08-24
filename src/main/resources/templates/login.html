@@ -47,16 +47,24 @@
                                         <h1 class="h4 text-gray-900 mb-4" th:text="#{login.welcome}">Welcome Back!</h1>
                                     </div>
                                     <form class="user" action="/login" method="post" th:object="${loginInfo}">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                   th:placeholder="#{login.form.id}"
-                                                placeholder="Enter Login Id...">
+                                        <div th:if="${#fields.hasGlobalErrors()}">
+                                            <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">No Matching User</p>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword"
-                                                   th:placeholder="#{login.form.password}" placeholder="Password">
+                                            <input class="form-control form-control-user" th:field="*{loginId}"
+                                                   aria-describedby="emailHelp"
+                                                   th:errorclass="field-error" th:placeholder="#{login.form.id}"
+                                                placeholder="Enter Login Id...">
+                                            <div class="field-error" th:errors="*{loginId}">
+                                                id
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" th:field="*{password}"
+                                                   th:errorclass="field-error" th:placeholder="#{login.form.password}" placeholder="Password">
+                                            <div class="field-error" th:errors="*{password}">
+                                                password
+                                            </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block"
                                         th:text="#{login.button.login}">

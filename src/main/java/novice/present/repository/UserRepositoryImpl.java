@@ -24,6 +24,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findByUserLoginIdAndUserPassword(String userLoginId, String userPassword) {
+//        return Optional.of(new User("abc", "1234", "1111", "eee", "aaaa@naver.com", "aaa", 2322, 3, 23));
         return Optional.empty();
     }
 }
