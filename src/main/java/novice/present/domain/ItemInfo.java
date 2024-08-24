@@ -6,7 +6,7 @@ import lombok.Data;
 *
 * 성별, 나이, 관계, 금액대, 상황(option), 카테고리(option), 자유 조건(option)
 * 금액대도 그대로 받기보단 어떠한 포멧을 만드는게 좋아보임
-* id는 item을 구분하기위해 도입 uuid 사용
+* id는 item을 구분하기 위해 도입 uuid 사용
 */
 
 @Data
