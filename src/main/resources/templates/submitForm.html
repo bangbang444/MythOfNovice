@@ -4,6 +4,12 @@
     <div th:replace="~{fragment::head}">
     </div>
     <title>SB Admin 2 - Dashboard</title>
+    <style>
+        .field-error-submit {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -59,32 +65,53 @@
 
                                                 <div class="col-12">
                                                     <input type="text" class="form-control bg-light border-0" placeholder="나이" required
-                                                           th:placeholder="#{submit.input.age}" style="height: 55px;" th:field="*{age}" th:value=null>
+                                                           th:placeholder="#{submit.input.age}" style="height: 55px;" th:field="*{age}" th:value=null
+                                                           th:errorclass="field-error-submit" >
+                                                    <div class = "field-error-submit" th:errors="*{age}">
+                                                        나이 오류
+                                                    </div>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
                                                     <input type="text" class="form-control bg-light border-0" placeholder="관계" required
-                                                           th:placeholder="#{submit.input.relationship}" style="height: 55px;" th:field="*{relationship}">
+                                                           th:placeholder="#{submit.input.relationship}" style="height: 55px;" th:field="*{relationship}"
+                                                           th:errorclass="field-error-submit">
+                                                    <div class = "field-error-submit" th:errors="*{relationship}">
+                                                        관계 오류
+                                                    </div>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
                                                     <input type="text" class="form-control bg-light border-0" placeholder="금액" required
-                                                           th:placeholder="#{submit.input.price}" style="height: 55px;" th:field="*{price}">
+                                                           th:placeholder="#{submit.input.price}" style="height: 55px;" th:field="*{price}"
+                                                           th:errorclass="field-error-submit">
+                                                    <div class = "field-error-submit" th:errors="*{price}">
+                                                        금액 오류
+                                                    </div>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
                                                     <textarea class="form-control bg-light border-0" rows="3" placeholder="상황"
-                                                              th:placeholder="#{submit.textarea.situation}" th:field="*{situation}"></textarea>
+                                                              th:placeholder="#{submit.textarea.situation}" th:field="*{situation}"
+                                                              th:errorclass="field-error-submit"></textarea>
+                                                    <div class = "field-error-submit" th:errors="*{situation}">
+                                                        상황 오류
+                                                    </div>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
                                                     <textarea class="form-control bg-light border-0" rows="3" placeholder="카테고리"
-                                                              th:placeholder="#{submit.textarea.category}" th:field="*{category}"></textarea>
+                                                              th:placeholder="#{submit.textarea.category}" th:field="*{category}"
+                                                              th:errorclass="field-error-submit"></textarea>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
                                                     <textarea class="form-control bg-light border-0" rows="3" placeholder="옵션"
-                                                              th:placeholder="#{submit.textarea.option}" th:field="*{option}"></textarea>
+                                                              th:placeholder="#{submit.textarea.option}" th:field="*{option}"
+                                                              th:errorclass="field-error-submit"></textarea>
+                                                    <div class = "field-error-submit" th:errors="*{option}">
+                                                        옵션 오류
+                                                    </div>
                                                     <br>
                                                 </div>
                                                 <div class="col-12">
