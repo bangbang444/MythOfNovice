@@ -14,10 +14,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository userRepositoryImpl;
-
+    private final UserRepository userRepository;
     public User login(String loginId, String password, BindingResult bindingResult) {
-        Optional<User> userOptional = userRepositoryImpl.findByUserLoginIdAndUserPassword(loginId, password);
+        Optional<User> userOptional = userRepository.findByUserLoginIdAndUserPassword(loginId, password);
 
         if (userOptional.isPresent()) {
             return userOptional.get();

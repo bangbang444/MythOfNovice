@@ -1,10 +1,7 @@
 package novice.present.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,10 +24,10 @@ public class User {
      * userLoginId: 최대 10자, 중복 안됨.
      * userPassword: 숫자, 영어, 특수문자 필수 & 8자 이상 & Hash로 저장 및 비교
      */
-    @NotBlank
+
     @Column(unique = true, length = 10)
     private String userLoginId;
-    @NotBlank
+
     @Column(nullable = false)
     private String userPassword;
     @Transient
@@ -47,21 +44,21 @@ public class User {
      * month :
      * day :
      */
-    @NotBlank
+
     @Column(unique = true, length = 10, nullable = false)
     private String userNickname;
     @Column(length = 50)
     private String userJob;
-    @NotBlank
+
     @Email
     @Column(nullable = false, unique = true)
     private String userEmail;
-    @NotNull
+
     @Enumerated(EnumType.STRING) // Enum 타입의 성별을 문자열로 저장합니다.
     @Column(length = 1) // 성별은 "M" 또는 "F"로 저장됩니다.
     private Gender userGender;
-    @NotNull
-    @Column(nullable = false)
+
+    @Column
     private LocalDate userBirth;
 
     @Transient
