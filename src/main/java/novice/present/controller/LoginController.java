@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import novice.present.domain.User;
 import novice.present.domain.form.LoginForm;
-import novice.present.repository.UserRepository;
 import novice.present.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
