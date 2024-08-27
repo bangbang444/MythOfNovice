@@ -23,6 +23,7 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/signup.css" rel="stylesheet">
+    <script src="js/script.js"></script>
 </head>
 
 <body class="bg-gradient-primary">
@@ -57,9 +58,12 @@
                                     <label for="userPassword" th:text="#{label.user.password}" >Password</label>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <div class="col-sm-6 mb-sm-0">
                                         <input type="password" id="userPassword" th:field="*{userPassword}"
                                                th:errorclass="field-error" class="form-control form-control-user" placeholder="Password">
+                                        <div class="field-error" th:errors="*{userPassword}">
+                                            password 형식 오류
+                                        </div>
                                     </div>
 
                                     <div class="col-sm-6">
@@ -67,9 +71,7 @@
                                                class="form-control form-control-user" placeholder="Repeat Password">
                                     </div>
 
-                                    <div class="field-error" th:errors="*{userPassword}">
-                                        password 형식 오류
-                                    </div>
+
 
                                 </div>
 
@@ -79,7 +81,10 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="email" id="userEmail" th:field="*{userEmail}"
-                                           class="form-control form-control-user" placeholder="Email Address">
+                                           th:errorclass="field-error" class="form-control form-control-user" placeholder="Email Address">
+                                    <div class="field-error" th:errors="*{userEmail}">
+                                        이메일 형식 오류
+                                    </div>
                                 </div>
 
                                 <!-- nickname -->
@@ -88,7 +93,10 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userNickname" th:field="*{userNickname}"
-                                           class="form-control form-control-user" placeholder="Nickname">
+                                           th:errorclass="field-error" class="form-control form-control-user" placeholder="Nickname">
+                                    <div class="field-error" th:errors="*{userNickname}">
+                                        email 형식 오류
+                                    </div>
                                 </div>
 
                                 <!-- gender -->
@@ -112,7 +120,10 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="userJob" th:field="*{userJob}"
-                                           class="form-control form-control-user" placeholder="Your Job">
+                                           th:errorclass="field-error" class="form-control form-control-user" placeholder="Your Job">
+                                    <div class="field-error" th:errors="*{userJob}">
+                                        job 형식 오류
+                                    </div>
                                 </div>
 
                                 <!-- Birthday -->
