@@ -38,3 +38,5 @@ out/
 
 ### AWS ###
 src/main/resources/application-aws.properties
+### GPT ###
+src/main/resources/application-gpt.properties
