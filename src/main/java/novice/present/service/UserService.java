@@ -15,7 +15,6 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
-
     public User login(String loginId, String password, BindingResult bindingResult) {
         Optional<User> userOptional = userRepository.findByUserLoginIdAndUserPassword(loginId, password);
 
