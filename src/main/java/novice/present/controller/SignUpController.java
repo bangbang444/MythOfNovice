@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Slf4j
 @Controller
+@RequestMapping("/signup")
 @RequiredArgsConstructor
 public class SignUpController {
 
@@ -25,13 +26,13 @@ public class SignUpController {
         dataBinder.addValidators(userValidator);
     }
 
-    @GetMapping("/signup")
+    @GetMapping("")
     public String signup(Model model){
         model.addAttribute("user", new User());
         return "signup";
     }
 
-    @PostMapping("/signup")
+    @PostMapping("")
     public String signup(@Validated @ModelAttribute User user, BindingResult bindingResult , RedirectAttributes redirectAttributes){
 
         if(bindingResult.hasErrors()){
@@ -42,6 +43,12 @@ public class SignUpController {
         userRepository.save(user);
         log.info(user.toString());
 
-        return "index";
+        return "signup-ok";
+    }
+
+    @GetMapping("/ok")
+    public String signupOk(){
+
+        return "signup-ok";
     }
 }
