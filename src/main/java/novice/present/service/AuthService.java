@@ -15,14 +15,29 @@ import java.util.Optional;
 public class AuthService {
 
     private final UserRepository userRepository;
+
     public User login(String loginId, String password, BindingResult bindingResult) {
+        log.info("로그인 시도: loginId={}", loginId);
         Optional<User> userOptional = userRepository.findByUserLoginIdAndUserPassword(loginId, password);
 
         if (userOptional.isPresent()) {
+            log.info("로그인 성공: loginId={}", loginId);
             return userOptional.get();
         } else {
+            log.error("로그인 실패 - 사용자 찾을 수 없음: loginId={}", loginId);
             bindingResult.reject("loginUserNotExist", null, null);
             return null;
         }
+    }
+
+    public void signup(User user, BindingResult bindingResult) {
+        log.info("회원가입 시도: userLoginId={}", user.getUserLoginId());
+        if (userRepository.existsByUserLoginId(user.getUserLoginId())) {
+            bindingResult.rejectValue("userLoginId", "signup.userLoginId.duplicate", "이미 사용 중인 아이디입니다.");
+            return;
+        }
+
+        userRepository.save(user);
+        log.info("회원가입 성공: user={}", user);
     }
 }
