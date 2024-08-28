@@ -30,7 +30,7 @@ public class MainController {
         User user = null;
         log.info("메인 컨트롤러: {}", session);
         if (session != null) {
-            user = (User) session.getAttribute(LoginController.LOGIN_MEMBER);
+            user = (User) session.getAttribute(AuthController.LOGIN_MEMBER);
             log.info("메인 컨트롤러 유저: {}", user);
         }
 
