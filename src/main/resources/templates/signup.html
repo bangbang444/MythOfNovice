@@ -103,7 +103,7 @@
                                 <div class="form-group-label">
                                     <label th:text="#{label.user.gender}">Gender</label>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" th:classappend="${#fields.hasErrors('userGender')}? 'field-error'">
                                     <div class="btn-group btn-group-toggle w-100" data-toggle="buttons" style="border-radius: 50px; border: 1px solid #d1d3e2;">
                                         <label class="btn btn-light w-50" style="border-radius: 50px 0 0 50px; color: gray;">
                                             <input type="radio" name="userGender" th:field="*{userGender}" value="M" autocomplete="off"> Male
@@ -112,6 +112,7 @@
                                             <input type="radio" name="userGender" th:field="*{userGender}" value="F" autocomplete="off"> Female
                                         </label>
                                     </div>
+                                    <div class="field-error" th:errors="*{userGender}">Please select your gender.</div>
                                 </div>
 
                                 <!-- job -->
@@ -130,10 +131,11 @@
                                 <div class="form-group-label">
                                     <label for="exampleInputYear" th:text="#{label.user.birthday}">Birthday</label>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row" th:classappend="${#fields.hasErrors('userBirth')}? 'field-error'">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="number" class="form-control form-control-user"
                                                id="exampleInputYear" name="year" placeholder="Year">
+                                        <div class="field-error" th:errors="*{userBirth}">Please select your gender.</div>
                                     </div>
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="number" class="form-control form-control-user"
