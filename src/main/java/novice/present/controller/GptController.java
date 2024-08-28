@@ -20,9 +20,9 @@ public class GptController {
 
     private final GptService gptService;
 
-    @GetMapping("/question")
-    public String gptResponse(@RequestParam("prompt") String prompt){
-        return gptService.questionAndAnswering(prompt);
-    }
+//    @GetMapping("/question")
+//    public String gptResponse(@RequestParam("prompt") String prompt){
+//        return gptService.questionAndAnswering(prompt);
+//    }
 
 }
