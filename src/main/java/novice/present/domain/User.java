@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity // JPA 엔티티 클래스임을 나타냅니다.
@@ -67,6 +69,9 @@ public class User {
     private int month;
     @Transient
     private int day;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<SearchLog> logList = new ArrayList<>();
 
     public User(String userLoginId, String userPassword, String userNickname, String userJob, String userEmail, Gender userGender, int year, int month, int day) {
         this.userLoginId = userLoginId;
