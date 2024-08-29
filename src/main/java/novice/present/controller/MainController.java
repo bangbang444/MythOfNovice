@@ -33,9 +33,10 @@ public class MainController {
             user = (User) session.getAttribute(AuthController.LOGIN_MEMBER);
             log.info("메인 컨트롤러 유저: {}", user);
         }
-
         model.addAttribute("user", user);
         return "index";
     }
+
+
 
 }

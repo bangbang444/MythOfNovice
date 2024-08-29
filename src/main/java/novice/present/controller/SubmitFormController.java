@@ -35,6 +35,7 @@ public class SubmitFormController {
     public String present(@Validated @ModelAttribute ItemInfo itemInfo, BindingResult bindingResult, Model model) {
         log.info(itemInfo.toString());
 
+
         //타입 오류가 발생했을때
         if(bindingResult.hasErrors()){
             log.info(bindingResult.getAllErrors().toString());
