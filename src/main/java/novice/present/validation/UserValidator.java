@@ -67,5 +67,11 @@ public class UserValidator implements Validator {
             errors.rejectValue("userJob", "signup.job");
         }
 
+        // 생일
+        if(user.getYear() == 0 || user.getMonth() == 0 || user.getDay() == 0){
+            errors.rejectValue("userBirth", "signup.birthday");
+        }
+
+
     }
 }
