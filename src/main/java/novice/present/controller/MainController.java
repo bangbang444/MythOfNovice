@@ -38,4 +38,9 @@ public class MainController {
         return "index";
     }
 
+    @GetMapping("/profile")
+    public String profileTest() {
+        return "userProfile";
+    }
+
 }
