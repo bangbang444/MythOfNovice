@@ -31,13 +31,23 @@ public class AuthService {
     }
 
     public void signup(User user, BindingResult bindingResult) {
+
+        boolean is_duplicate = false;
+
         log.info("회원가입 시도: userLoginId={}", user.getUserLoginId());
         if (userRepository.existsByUserLoginId(user.getUserLoginId())) {
+            is_duplicate = true;
             bindingResult.rejectValue("userLoginId", "signup.userLoginId.duplicate", "이미 사용 중인 아이디입니다.");
-            return;
         }
 
-        userRepository.save(user);
-        log.info("회원가입 성공: user={}", user);
+        if (userRepository.existsByUserNickname(user.getUserNickname())) {
+            is_duplicate = true;
+            bindingResult.rejectValue("userNickname", "signup.userNickname.duplicate", "이미 사용 중인 이메일입니다.");
+        }
+
+        if(is_duplicate) {
+            //userRepository.save(user);
+            log.info("회원가입 성공: user={}", user);
+        }
     }
 }

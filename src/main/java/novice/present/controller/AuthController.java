@@ -1,6 +1,8 @@
 package novice.present.controller;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,10 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Slf4j
@@ -39,7 +38,8 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public String signup(@Validated @ModelAttribute User user, BindingResult bindingResult , RedirectAttributes redirectAttributes){
+    public String signup(@Validated @ModelAttribute User user, BindingResult bindingResult ,
+                         RedirectAttributes redirectAttributes, HttpServletResponse response){
         log.info("회원가입 요청: {}", user.getUserLoginId());
         if (!bindingResult.hasErrors()) {
             authService.signup(user, bindingResult);
@@ -52,7 +52,7 @@ public class AuthController {
         return "signup-ok";
     }
 
-    @GetMapping("/signup/ok")
+    @GetMapping("signup-ok")
     public String signupOk(){
 
         return "signup-ok";
