@@ -24,16 +24,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class MainController {
 
     @GetMapping
-    public String home(Model model, HttpServletRequest request) {
-
-        HttpSession session = request.getSession(false);
-        User user = null;
-        log.info("메인 컨트롤러: {}", session);
-        if (session != null) {
-            user = (User) session.getAttribute(AuthController.LOGIN_MEMBER);
-            log.info("메인 컨트롤러 유저: {}", user);
-        }
+    public String home(Model model, User user) {
         model.addAttribute("user", user);
+
         return "index";
     }
 

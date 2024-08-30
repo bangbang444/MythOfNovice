@@ -35,7 +35,7 @@ public class SearchLog {
     // 추천 상품
     @Column
     private String outputName;
-    @Column
+    @Column(length = 1000)
     private String outputUrl;
 
     // 즐겨찾기 여부
