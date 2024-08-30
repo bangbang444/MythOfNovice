@@ -1,4 +1,4 @@
-package novice.present.domain.gpt.config;
+package novice.present.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
