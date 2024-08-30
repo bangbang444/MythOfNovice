@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+
     // 기본키
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -84,5 +85,13 @@ public class User {
     // Enum 타입의 성별을 정의합니다.
     public enum Gender {
         M, F
+    }
+
+    @Override
+    public String toString() {
+        return "userId=" + userId +
+                "\nuserLoginId='" + userLoginId + '\'' +
+                "\nuserPassword='" + userPassword + '\'' +
+                "\nuserNickname='" + userNickname + '\'';
     }
 }
