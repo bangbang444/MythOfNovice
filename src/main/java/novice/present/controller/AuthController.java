@@ -18,6 +18,8 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.LocalDate;
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
@@ -41,6 +43,7 @@ public class AuthController {
     public String signup(@Validated @ModelAttribute User user, BindingResult bindingResult ,
                          RedirectAttributes redirectAttributes, HttpServletResponse response){
         log.info("회원가입 요청: {}", user.getUserLoginId());
+
         if (!bindingResult.hasErrors()) {
             authService.signup(user, bindingResult);
         }
@@ -48,6 +51,8 @@ public class AuthController {
         if (bindingResult.hasErrors()) {
             return "signup";
         }
+
+        log.info(String.valueOf(user.getUserBirth()));
 
         return "signup-ok";
     }

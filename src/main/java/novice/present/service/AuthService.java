@@ -7,6 +7,7 @@ import novice.present.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @Service
@@ -45,9 +46,18 @@ public class AuthService {
             bindingResult.rejectValue("userNickname", "signup.userNickname.duplicate", "이미 사용 중인 이메일입니다.");
         }
 
-        if(is_duplicate) {
+        if(!is_duplicate) {
+            makeUserBirth(user);
             //userRepository.save(user);
             log.info("회원가입 성공: user={}", user);
+        }
+    }
+
+    private static void makeUserBirth(User user) {
+        // @ModelAttribute에 의해 User 객체의 기본 필드들이 바인딩된 후, userBirth를 설정합니다.
+        if (user.getYear() != null && user.getMonth() != null && user.getDay() != null) {
+            user.setUserBirth(LocalDate.of(user.getYear(), user.getMonth(), user.getDay()));
+            System.out.println("hlllllllo");
         }
     }
 }

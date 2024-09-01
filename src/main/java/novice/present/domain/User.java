@@ -63,16 +63,17 @@ public class User {
     private LocalDate userBirth;
 
     @Transient
-    private int year;
+    private Integer year;
     @Transient
-    private int month;
+    private Integer month;
     @Transient
-    private int day;
+    private Integer day;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SearchLog> logList = new ArrayList<>();
 
-    public User(String userLoginId, String userPassword, String userNickname, String userJob, String userEmail, Gender userGender, int year, int month, int day) {
+
+    public User(String userLoginId, String userPassword, String userNickname, String userJob, String userEmail, Gender userGender, Integer year, Integer month, Integer day) {
         this.userLoginId = userLoginId;
         this.userPassword = userPassword;
         this.userNickname = userNickname;
