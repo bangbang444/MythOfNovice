@@ -25,18 +25,9 @@ public class SearchLogController {
     private final UserRepository userRepository;
 
     @GetMapping("/my-page/log")
-    public String searchLog(Model model, HttpServletRequest request) {
-
-        HttpSession session = request.getSession(false);
-        User user = null;
-        log.info("메인 컨트롤러: {}", session);
-        if (session != null) {
-            user = (User) session.getAttribute(AuthController.LOGIN_MEMBER);
-            log.info("메인 컨트롤러 유저: {}", user);
-        }
-
+    public String searchLog(Model model, User user) {
         //유저가 로그인하지 않았으면 url로 접근해도 로그인화면으로
-        if (session == null) {
+        if (user == null) {
             return "redirect:/login";
         }
 
@@ -68,17 +59,9 @@ public class SearchLogController {
     }
 
     @GetMapping("/my-page/bookmarked")
-    public String bookmark(Model model, HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        User user = null;
-        log.info("메인 컨트롤러: {}", session);
-        if (session != null) {
-            user = (User) session.getAttribute(AuthController.LOGIN_MEMBER);
-            log.info("메인 컨트롤러 유저: {}", user);
-        }
-
+    public String bookmark(Model model, User user) {
         //유저가 로그인하지 않았으면 url로 접근해도 로그인화면으로
-        if (session == null) {
+        if (user == null) {
             return "redirect:/login";
         }
 
