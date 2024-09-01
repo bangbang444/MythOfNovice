@@ -27,9 +27,9 @@ public class MainController {
     public String home(Model model, User user) {
         model.addAttribute("user", user);
 
+        log.info("홈 화면 - 유저 정보: {}", user);
+
         return "index";
     }
-
-
 
 }
