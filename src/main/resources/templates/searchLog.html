@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="~{fragment::head}">
+    </div>
+
+    <title>SB Admin 2 - History</title>
+    <style>
+        .field-error-submit {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body id="page-top">
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul th:replace="~{fragment::sidebar}">
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- start of Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+                 th:insert="~{fragment :: topbar}">
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <section class="w-100 p-4" style="background-color: #eee; border-radius: .5rem .5rem 0 0;">
+
+                    <h3 class="mb-4">즐겨찾기된 검색 기록 조회</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">성별</th>
+                                <th scope="col">나이</th>
+                                <th scope="col">관계</th>
+                                <th scope="col">금액</th>
+                                <th scope="col">상황</th>
+                                <th scope="col">카테고리</th>
+                                <th scope="col">옵션</th>
+                                <th scope="col">추천상품</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">즐겨찾기 여부</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- 검색 기록 데이터를 기반으로 테이블 행을 동적으로 생성 -->
+                            <tr th:each="log : ${searchLogs}">
+                                <td th:text="${log.logId}"></td>
+                                <td th:text="${log.inputGender}"></td>
+                                <td th:text="${log.inputAge}"></td>
+                                <td th:text="${log.inputRelationship}"></td>
+                                <td th:text="${log.inputPrice}"></td>
+                                <td th:text="${log.inputSituation}"></td>
+                                <td th:text="${log.inputCategory}"></td>
+                                <td th:text="${log.inputOption}"></td>
+                                <td th:text="${log.outputName}"></td>
+                                <td><a th:href="${log.outputUrl}" target="_blank">검색결과</a></td>
+                                <td th:text="${log.isBookmarked ? '예' : '아니오'}"></td>
+                            </tr>
+                            <!-- 추가적인 검색 기록은 여기에 추가 -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+
+                <!-- Content Row -->
+
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white" th:insert="~{fragment::footer}">
+
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+
+<!--start of javascript-->
+<th:block th:replace="~{fragment::javascript}">
+</th:block>
+<!--end of javascript-->
+
+</body>
+</html>
