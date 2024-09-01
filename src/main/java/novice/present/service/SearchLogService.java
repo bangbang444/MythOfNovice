@@ -3,6 +3,7 @@ package novice.present.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import novice.present.domain.SearchLog;
+import novice.present.domain.User;
 import novice.present.repository.SearchLogRepository;
 
 import org.springframework.stereotype.Service;
@@ -27,5 +28,9 @@ public class SearchLogService {
 
     public List<SearchLog> getSearchLogByIdAndFavorite(Long id) {
         return searchLogRepository.findByUserUserIdAndIsBookmarkedTrue(id);
+    }
+
+    public void updateBookmarkStatus(Long logId, Boolean isBookmarked, Long userId){
+        searchLogRepository.updateBookmarkStatus(logId, !isBookmarked, userId);
     }
 }
