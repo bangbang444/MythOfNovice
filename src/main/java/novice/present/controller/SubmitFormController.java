@@ -54,17 +54,20 @@ public class SubmitFormController {
 
         //검색기록 저장로직
         if (user != null) {
-            String recommendedItemName = "";
-            String recommendedItemUrl = "";
             for (PresentRecommendation recommendedItem : recommendedItems) {
-                recommendedItemName += recommendedItem.getPresentName()+", ";
-                recommendedItemUrl += recommendedItem.getUrl() + ", ";
+                SearchLog searchLog = makeSearchLog(
+                        itemInfo.getGender(),
+                        itemInfo.getAge(),
+                        itemInfo.getRelationship(),
+                        itemInfo.getPrice(),
+                        itemInfo.getSituation(),
+                        itemInfo.getCategory(),
+                        itemInfo.getOption(),
+                        recommendedItem.getPresentName(),
+                        recommendedItem.getUrl(),
+                        user);
+                searchLogService.addSearchLog(searchLog);
             }
-            log.info("recommendedUrl = {}", recommendedItemUrl);
-
-            SearchLog searchLog = makeSearchLog(itemInfo.getGender(), itemInfo.getAge(), itemInfo.getRelationship(), itemInfo.getPrice(), itemInfo.getSituation(),
-                    itemInfo.getCategory(), itemInfo.getOption(), recommendedItemName, recommendedItemUrl, user);
-            searchLogService.addSearchLog(searchLog);
         }
 
         // 쿠팡 URL을 모델에 담아 리다이렉트
