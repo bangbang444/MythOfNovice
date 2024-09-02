@@ -23,4 +23,5 @@ public interface SearchLogRepository extends JpaRepository<SearchLog, Long> {
     void updateBookmarkStatus(Long logId, Boolean isBookmarked, Long userId);
 
 
+
 }

@@ -30,7 +30,12 @@ public class SearchLogService {
         return searchLogRepository.findByUserUserIdAndIsBookmarkedTrue(id);
     }
 
+    //isBookmarked의 상태로 업데이트
     public void updateBookmarkStatus(Long logId, Boolean isBookmarked, Long userId){
         searchLogRepository.updateBookmarkStatus(logId, !isBookmarked, userId);
+    }
+
+    public SearchLog addSearchLog(SearchLog searchLog) {
+        return searchLogRepository.save(searchLog);
     }
 }

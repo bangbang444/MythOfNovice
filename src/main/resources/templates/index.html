@@ -42,7 +42,9 @@
                                     <p class="lead fw-normal text-white-50 mb-4">저희 서비스를 이용하시면 고민없이 선물을 고를수 있습니다!!!</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                         <a class="btn btn-primary btn-lg px-4 me-sm-3" th:href="@{/submitForm}">이용해보기</a>
-                                        <a class="btn btn-outline-light btn-lg px-4" th:href="@{/login}">로그인하기</a>
+                                        <th:block th:if="${user eq null}">
+                                            <a class="btn btn-outline-light btn-lg px-4" th:href="@{/login}">로그인하기</a>
+                                        </th:block>
                                     </div>
                                 </div>
                             </div>
