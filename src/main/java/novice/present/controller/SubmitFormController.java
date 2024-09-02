@@ -6,7 +6,6 @@ import novice.present.domain.ItemInfo;
 import novice.present.domain.SearchLog;
 import novice.present.domain.User;
 import novice.present.domain.gpt.dto.PresentRecommendation;
-import novice.present.repository.SubmitFormRepositoryImpl;
 import novice.present.service.GptService;
 import novice.present.service.SearchLogService;
 import org.springframework.stereotype.Controller;
@@ -58,9 +57,10 @@ public class SubmitFormController {
             String recommendedItemName = "";
             String recommendedItemUrl = "";
             for (PresentRecommendation recommendedItem : recommendedItems) {
-                recommendedItemName += recommendedItem.getPresentName()+"\n";
-                recommendedItemUrl += recommendedItem.getUrl() + "\n";
+                recommendedItemName += recommendedItem.getPresentName()+", ";
+                recommendedItemUrl += recommendedItem.getUrl() + ", ";
             }
+            log.info("recommendedUrl = {}", recommendedItemUrl);
 
             SearchLog searchLog = makeSearchLog(itemInfo.getGender(), itemInfo.getAge(), itemInfo.getRelationship(), itemInfo.getPrice(), itemInfo.getSituation(),
                     itemInfo.getCategory(), itemInfo.getOption(), recommendedItemName, recommendedItemUrl, user);
